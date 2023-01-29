@@ -19,5 +19,10 @@ class SinglePageController extends AbstractController
     {
         return $this->render('links.html.twig');
     }
+    #[route('/', name: "symfonytyped")]
+    public function symfonyUXTyped(){
+
+        return $this->render('uxtyped.html.twig');
+}
 
 }

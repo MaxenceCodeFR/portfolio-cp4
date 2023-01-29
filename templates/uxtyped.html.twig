@@ -1,0 +1,20 @@
+<div class="symfonyUX d-flex  justify-content-center mt-5">
+<div class="card d-flex  " style="width: 18rem;">
+       <div class="card-body ">
+              <div>
+                     I created this UX component because
+                     <span {{ stimulus_controller('symfony/ux-typed', {
+                            strings: ['I ❤ Symfony UX', 'Symfony UX is great', 'Symfony UX is easy'],
+                            smartBackspace: true,
+                            startDelay: 100,
+                            backSpeed: 20,
+                            backDelay: 100,
+                            loop: true,
+                            showCursor: true,
+                            cursorChar: '✨'
+                     }) }}></span>
+              </div>
+
+       </div>
+</div>
+</div>

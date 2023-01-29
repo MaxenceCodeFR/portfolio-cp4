@@ -1,10 +1,12 @@
 .bordertopstyle{
   border-top: $spacing-sm solid $secondary;
+  z-index: 1000;
 }
 .links{
   position: fixed;
-  top: $spacing-sm;
-  right: $spacing-sm;
+  bottom: calc($spacing-md * 2.5);
+  right: calc($spacing-sm / 2);
+  z-index: 1000;
   svg{
     margin-top: calc($spacing-sm / 2);
     &:hover{
