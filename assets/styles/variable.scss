@@ -1,1 +1,25 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Teko:wght@500&display=swap');
+//////////////////////////
+//Variables de couleurs//
+////////////////////////
+$primary: #7df9ff;
+$secondary: #000000;
+
+$darkmode-primary: #15aabf;
+$darkmode-bg: #21232f;
+
+///////////////////////////
+//Variables d'espacement//
+/////////////////////////
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-l: 3rem; //Feel free to divide if necessary
+$spacing-xl: 4rem; //Feel free to divide if necessary
+
+//////////////////////////////////
+//Variables de police d'écriture//
+/////////////////////////////////
+$title-font: 'Teko', sans-serif;
+$body-font: 'Poppins', sans-serif;
+

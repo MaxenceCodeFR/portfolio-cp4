@@ -1,0 +1,11 @@
+.links{
+  position: fixed;
+  top: $spacing-sm;
+  right: $spacing-sm;
+  svg{
+    margin-top: calc($spacing-sm / 2);
+    &:hover{
+      fill: $darkmode-primary;
+    }
+  }
+}

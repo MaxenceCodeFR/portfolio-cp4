@@ -1,0 +1,17 @@
+.navbar{
+  font-family: $title-font;
+  background-color: $secondary;
+  border-top: 3px solid $primary;
+  li{
+    font-size: x-large;
+    a{
+      color: #FFFFFF;
+      &:hover{
+        background:linear-gradient(158deg, rgba(255,255,255,1) 14%, rgba(125,249,255,1) 91%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+}

@@ -1,3 +1,5 @@
-body {
-    background-color: lightgray;
-}
+@import "variable";
+@import "~bootstrap/scss/bootstrap";
+@import "navbar";
+@import "body";
+@import "links";
