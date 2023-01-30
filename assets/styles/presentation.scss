@@ -1,3 +1,23 @@
-.jumbotron{
-  font-family: $body-font;
+.allprez {
+  .jumbotron {
+    margin-top: $spacing-xl;
+    font-family: $body-font;
+    width: 70%;
+    box-shadow: 20px 20px 60px rgb(249, 178, 8, .10),
+    -20px -20px 60px #e3e3e3;
+    border-radius: 15px;
+    @media screen and (min-width: 768px) {
+      margin-top: $spacing-l;
+    };
+
+    hr {
+      color: rgba(249, 178, 8, 0.5);
+    }
+
+    h1 {
+      background: linear-gradient(158deg, rgba(0, 0, 0, 1) 2%, rgba(249, 178, 8, 1) 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
 }
