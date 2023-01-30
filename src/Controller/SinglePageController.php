@@ -24,5 +24,10 @@ class SinglePageController extends AbstractController
 
         return $this->render('uxtyped.html.twig');
 }
+    #[route('/', name: 'presentation')]
+    public function content(): Response
+    {
+        return $this->render('presentation.html.twig');
+    }
 
 }

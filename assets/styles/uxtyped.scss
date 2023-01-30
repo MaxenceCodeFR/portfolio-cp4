@@ -1,5 +1,9 @@
 .symfonyUX{
   font-family: $body-font;
   font-size: x-large;
-  height: 40vh;
+  height: 25vh;
+  border: none;
+  @media screen and (min-width: 768px) {
+      min-width: 20rem;
+  }
 }
