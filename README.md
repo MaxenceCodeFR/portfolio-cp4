@@ -1,5 +1,6 @@
 Pour commencer:
-- Installation de Symfony
+- Initialisation de projet Symfony
+- Création d'un repo GitHub
 - Installation Webpack Encore
 - Installation de Bootstrap
 - Installation de Yarn et Composer
