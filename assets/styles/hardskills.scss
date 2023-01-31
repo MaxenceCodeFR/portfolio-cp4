@@ -1,5 +1,14 @@
-.carousel{
-  img{
-    width: 20px;
+.h2hardskills {
+    color: $primary;
+    background: linear-gradient(158deg, rgba(0, 0, 0, 1) 2%, rgba(249, 178, 8, 1) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+
+.carousel{
+  margin: auto;
+  box-shadow: 20px 20px 60px rgb(249, 178, 8, .10),
+  -20px -20px 60px #e3e3e3;
+  border-radius: 15px;
+  width: 70%;
 }

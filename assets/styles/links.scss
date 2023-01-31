@@ -1,6 +1,10 @@
 .bordertopstyle{
   border-top: $spacing-sm solid $secondary;
   z-index: 1000;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
 }
 .links{
   position: fixed;
