@@ -29,5 +29,10 @@ class SinglePageController extends AbstractController
     {
         return $this->render('presentation.html.twig');
     }
+    #[route('/', name: 'hardskills')]
+    public function hardSkills(): Response
+    {
+        return  $this->render('hardskills.html.twig');
+    }
 
 }
