@@ -17,6 +17,7 @@ class Media
     private ?string $image = null;
 
     #[ORM\ManyToOne(inversedBy: 'image')]
+    #[ORM\JoinColumn(nullable: false)]
     private ?Project $project = null;
 
     public function getId(): ?int

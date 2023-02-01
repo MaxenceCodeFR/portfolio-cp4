@@ -22,7 +22,7 @@ class Project
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Media::class)]
+    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Media::class, orphanRemoval: true)]
     private Collection $image;
 
     public function __construct()
