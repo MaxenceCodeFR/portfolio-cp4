@@ -11,14 +11,39 @@
   }
 
 }
-
-.carousel{
-  margin: auto;
-  box-shadow: 20px 20px 60px rgb(249, 178, 8, .10),
-  -20px -20px 60px #e3e3e3;
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: $spacing-sm;
+  grid-row-gap: $spacing-sm;
   border-radius: 15px;
-  width: 80%;
+  box-shadow:  20px 20px 60px #bebebe,
+  -20px -20px 60px #ffffff;
+  padding: $spacing-sm;
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
+
+.hardskills{
+
+    .php{
+      width: 65%;
+    }
+    .html{
+      width: 50%;
+      @media screen and (min-width: 768px) {
+        width: 45%;
+      }
+    }
+  }
+
+
+
 .precision{
     margin: $spacing-md auto $spacing-md;
     width: 80%;
