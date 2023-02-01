@@ -1,3 +1,5 @@
+{% extends 'base.html.twig' %}
+{% block body %}
 <h2 class="h2global fw-bold display-3 text-center">
     Hard <span class="h2hardskills">Skills</span>
 </h2>
@@ -30,11 +32,7 @@
     <div>
         <img class="w-50" src="{{ asset('images/git-bash.svg') }}">
     </div>
-
 </div>
-
-
-
     <p class="precision text-center">Pour la petite précision, lors de l'utilisation de Symfony, j'ai
         appris à utiliser Encore, Yarn et Doctrine qui vont tous de pair avec Symfony
         Tout autant que les Hardskills, j'aspire à découvrir d'autre
@@ -42,3 +40,4 @@
         je suis interressé par plein de Toolkit. Comme nous n'en parlons jamais assez,
         tout au long de la formation j'ai utilisé la fameuse méthode AGILE.
     </p>
+{% endblock %}
