@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[route('/portfolio', name: "portfolio")]
+#[route('/', name: "portfolio")]
 class SinglePageController extends AbstractController
 {
     #[route('/', name: "portfolio")]
