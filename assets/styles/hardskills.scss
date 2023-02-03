@@ -3,9 +3,12 @@
     background: linear-gradient(158deg, rgba(0, 0, 0, 1) 2%, rgba(173, 145, 97, 1) 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: $title-font;
+
   }
 .h2global{
   margin: $spacing-xl auto $spacing-md auto;
+  font-family: $title-font;
   @media screen and (min-width: 768px) {
     margin-top: calc($spacing-xl * 2);
   }

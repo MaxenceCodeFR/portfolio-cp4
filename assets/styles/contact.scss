@@ -1,0 +1,15 @@
+.contact{
+  margin-bottom: 10rem;
+  background-color: $secondary!important;
+  color: $white!important;
+
+  }
+
+.envoyer{
+  &:hover{
+    background-color: $secondary;
+    color:$white!important;
+    transition: ease 1s!important;
+
+}
+}

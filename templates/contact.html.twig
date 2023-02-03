@@ -1,8 +1,13 @@
-{% extends 'base.html.twig' %}
-{% block body %}
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+<div class="d-flex justify-content-around">
+    <button type="button" class="btn contact" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Contact
     </button>
+    <a href="{{ asset('/uploads/images/curriculum-vitae.pdf') }}" target="_blank"><button type="button" class="btn contact">
+            Curriculum Vitae
+        </button></a>
+
+</div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -10,20 +15,20 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Contactez-Moi</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#273036" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                        </svg></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
-                        <button type="submit">Envoyer message</button>
+                        <button class="btn envoyer" type="submit">Envoyer message <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                            </svg></button>
                         {{ form_end(form) }}
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-{% endblock %}

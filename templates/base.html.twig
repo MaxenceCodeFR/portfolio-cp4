@@ -16,12 +16,7 @@
     {% block header %} {%include '_navbar.html.twig' %}{% endblock %}
         {% block body %}
             {% include 'render.html.twig' %}
-            {% if app.user %}
-                {{ app.user.email }}
-                <a href="{{ path('logout') }}"> Se déconnecter</a>
-            {% else %}
-                <a href="{{ path('login') }}"> Se connecter</a>
-            {% endif %}
+
         {% endblock %}
 
 

@@ -15,5 +15,9 @@
 
         <button type="submit">login</button>
     </form>
+    {% if app.user %}
+        {{ app.user.email }}
+        <a href="{{ path('logout') }}"> Se déconnecter</a>
+    {% endif %}
 
 {% endblock %}

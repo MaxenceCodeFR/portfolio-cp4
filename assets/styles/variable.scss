@@ -1,5 +1,5 @@
-@import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Fauna+One&family=Playfair+Display&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Lora:wght@500&display=swap');
 //////////////////////////
 //Variables de couleurs//
 ////////////////////////
@@ -7,7 +7,7 @@ $primary: #AD9161;
 $secondary: #273036;
 $white: white;
 
-
+@import "~bootstrap/scss/bootstrap";
 
 ///////////////////////////
 //Variables d'espacement//
@@ -21,5 +21,6 @@ $spacing-xl: 4rem; //Feel free to divide if necessary
 //Variables de police d'écriture//
 /////////////////////////////////
 
-$body-font: 'Playfair Display', serif;
+$body-font: 'Lexend', sans-serif;
+$title-font: 'Lora', serif;
 
