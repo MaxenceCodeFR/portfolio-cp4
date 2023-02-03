@@ -38,3 +38,5 @@ C'est un portfolio en Single Page et a l'interieur on y retrouve :
 - Mon CV téléchargeable
 et 
 - Un petit bouton de contact
+
+(et une partie admin secrète)
