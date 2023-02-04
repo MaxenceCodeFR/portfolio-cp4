@@ -3,12 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
+#[Vich\Uploadable]
 class Project
 {
     #[ORM\Id]
@@ -19,16 +23,19 @@ class Project
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?DatetimeInterface $updatedAt = null;
+
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Media::class, orphanRemoval: true)]
-    private Collection $image;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $images;
 
-    public function __construct()
-    {
-        $this->image = new ArrayCollection();
-    }
+    #[Vich\UploadableField(mapping: 'images', fileNameProperty: 'images')]
+    private ?File $imageFile = null;
+
+
 
     public function getId(): ?int
     {
@@ -59,33 +66,48 @@ class Project
         return $this;
     }
 
+
+
+    public function setImageFile(File $image = null): Project
+    {
+        $this->imageFile = $image;
+        if ($image) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
     /**
-     * @return Collection<int, Media>
+     * @return DateTimeInterface|null
      */
-    public function getImage(): Collection
+    public function getUpdatedAt(): ?DateTimeInterface
     {
-        return $this->image;
+        return $this->updatedAt;
     }
 
-    public function addImage(Media $image): self
+    /**
+     * @param DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt(?DateTimeInterface $updatedAt): void
     {
-        if (!$this->image->contains($image)) {
-            $this->image->add($image);
-            $image->setProject($this);
-        }
+        $this->updatedAt = $updatedAt;
+    }
+
+    public function getImages(): ?string
+    {
+        return $this->images;
+    }
+
+    public function setImages(string $images): self
+    {
+        $this->images = $images;
 
         return $this;
     }
 
-    public function removeImage(Media $image): self
-    {
-        if ($this->image->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getProject() === $this) {
-                $image->setProject(null);
-            }
-        }
-
-        return $this;
-    }
 }

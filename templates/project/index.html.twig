@@ -1,37 +1,25 @@
 <h1>Project index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Description</th>
-                <th>Title</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for project in projects %}
-
-            <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.description }}</td>
-                <td>{{ project.title }}</td>
+                <img class src="{{ vich_uploader_asset(project) }}">
+                {{ project.description }}
+                {{ project.title }}
 
                 {% if is_granted("ROLE_ADMIN") %}
-                <td>
+
                     <a href="{{ path('app_project_edit', {'id': project.id}) }}">edit</a>
-                </td>
-            </tr>
+
+
             {% endif %}
         {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
+
+                <p colspan="4">no records found</p>
+
         {% endfor %}
-        </tbody>
+
         {% if is_granted("ROLE_ADMIN") %}
         <a href="{{ path('app_project_new') }}">Create new</a>
         {% endif %}
-    </table>
+
 
 
