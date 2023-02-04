@@ -2,10 +2,12 @@
 
 namespace App\Form;
 
+
 use App\Entity\Project;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class Project2Type extends AbstractType
 {
@@ -14,6 +16,11 @@ class Project2Type extends AbstractType
         $builder
             ->add('description')
             ->add('title')
+            ->add('imageFile', VichFileType::class, [
+                'required'      => false,
+                'allow_delete'  => true, // not mandatory, default is true
+                'download_uri' => true, // not mandatory, default is true
+            ])
         ;
     }
 
