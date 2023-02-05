@@ -24,7 +24,7 @@ class SinglePageController extends AbstractController
         return $this->render('base.html.twig');
     }
 
-    #[Route('/contact', name:'contact', methods: ['POST'])]
+    #[Route('/contact', name:'contact', methods: ['POST', 'GET'])]
     public function contact(Request $request, MailerInterface $mailer, ContactRepository $contactRepository): Response
     {
         $contact = new Contact();

@@ -16,7 +16,7 @@ class Project2Type extends AbstractType
         $builder
             ->add('description')
             ->add('title')
-            ->add('imageFile', VichFileType::class, [
+            ->add('posterFile', VichFileType::class, [
                 'required'      => false,
                 'allow_delete'  => true, // not mandatory, default is true
                 'download_uri' => true, // not mandatory, default is true

@@ -1,25 +1,20 @@
-<h1>Project index</h1>
+<h1 class="h1project fw-bolder d-flex justify-content-center">Project index</h1>
 
-        {% for project in projects %}
-                <img class src="{{ vich_uploader_asset(project) }}">
-                {{ project.description }}
-                {{ project.title }}
-
-                {% if is_granted("ROLE_ADMIN") %}
-
-                    <a href="{{ path('app_project_edit', {'id': project.id}) }}">edit</a>
-
-
-            {% endif %}
+{% for project in projects %}
+        <div class="overlay-image w-100 mb-4">
+                <img class="w-100" src="{{ vich_uploader_asset(project) }}">
+                <div class="hover-image w-100">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                </div>
+        </div>
+        {% if is_granted("ROLE_ADMIN") %}
+                <a href="{{ path('app_project_edit', {'id': project.id}) }}">edit</a>
+        {% endif %}
         {% else %}
-
                 <p colspan="4">no records found</p>
-
-        {% endfor %}
-
+{% endfor %}
         {% if is_granted("ROLE_ADMIN") %}
         <a href="{{ path('app_project_new') }}">Create new</a>
         {% endif %}
-
-
 

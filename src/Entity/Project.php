@@ -8,7 +8,6 @@ use DateTimeInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
-
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
@@ -23,19 +22,17 @@ class Project
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?DatetimeInterface $updatedAt = null;
-
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $images;
+    private ?string $posters = null;
 
-    #[Vich\UploadableField(mapping: 'images', fileNameProperty: 'images')]
-    private ?File $imageFile = null;
+    #[Vich\UploadableField(mapping: 'poster_file', fileNameProperty: 'posters')]
+    private ?File $posterFile = null;
 
-
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?DatetimeInterface $updatedAt = null;
 
     public function getId(): ?int
     {
@@ -66,20 +63,29 @@ class Project
         return $this;
     }
 
-
-
-    public function setImageFile(File $image = null): Project
+    public function getPosters(): ?string
     {
-        $this->imageFile = $image;
+        return $this->posters;
+    }
+
+    public function setPosters(?string $posters): self
+    {
+        $this->posters = $posters;
+
+        return $this;
+    }
+
+    public function setPosterFile(File $image = null): Project
+    {
+        $this->posterFile = $image;
         if ($image) {
             $this->updatedAt = new DateTime('now');
         }
         return $this;
     }
-
-    public function getImageFile(): ?File
+    public function getPosterFile(): ?File
     {
-        return $this->imageFile;
+        return $this->posterFile;
     }
 
     /**
@@ -96,18 +102,6 @@ class Project
     public function setUpdatedAt(?DateTimeInterface $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
-    }
-
-    public function getImages(): ?string
-    {
-        return $this->images;
-    }
-
-    public function setImages(string $images): self
-    {
-        $this->images = $images;
-
-        return $this;
     }
 
 }
